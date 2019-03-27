@@ -1,0 +1,69 @@
+syntax "Zettelkasten" "\.(md|mkd|mkdn|markdown|zk)$"
+
+# Pandoc citations
+color blue "\[@(.*)\]"
+
+# Wikilinks
+color green "(__[^ ][^_]*__|\[\[[^ ][^*]*\]\])"
+
+# tags
+color green "#\S*"
+
+# Critic markdown
+color black,green "\{\+\+(.*)\+\+\}"
+color black,red "\{\-\-(.*)\-\-\}"
+color black,yellow "\{\=\=(.*)\=\=\}"
+color black,white "\{>>(.*)<<\}"
+color black,white "<!\-\-(.*)\-\->"
+
+# Tables (Github extension)
+color cyan ".*[ :]\|[ :].*"
+
+# quotes
+color brightblack  start="^>" end="^$"
+color brightblack  "^>.*"
+
+# Emphasis
+color white "(^|[[:space:]])(_[^ ][^_]*_|\*[^ ][^*]*\*)"
+
+# Strong emphasis
+color brightwhite "(^|[[:space:]])(__[^ ][^_]*__|\*\*[^ ][^*]*\*\*)"
+
+# strike-through
+# color red "(^|[[:space:]])~~[^ ][^~]*~~"
+
+# horizontal rules
+color brightmagenta "^(---+|===+|___+|\*\*\*+)\s*$"
+
+# headlines
+color brightmagenta "^#{1,6} .*"
+
+# lists
+color blue "^[[:space:]]*[\*+-] |^[[:space:]]*[0-9]+\. "
+
+# leading whitespace
+color white    "^[[:space:]]+"
+
+# misc
+# color magenta   "\(([CcRr]|[Tt][Mm])\)" "\.{3}" "(^|[[:space:]])\-\-($|[[:space:]])"
+
+# links
+# color brightblue "\[[^]]+\]"
+# color brightblue "\[([^][]|\[[^]]*\])*\]\([^)]+\)"
+color brightblue "\[(.*)\]\(.*\)"
+
+# images
+# color magenta "!\[[^][]*\](\([^)]+\)|\[[^]]+\])"
+color magenta "!(\([^)]+\)|\[[^]]+\])\(.*\)"
+
+# urls
+# color brightyellow "https?://[^ )>]+"
+
+# code
+# color yellow   "`[^`]*`|^ {4}[^-+*].*"
+# code blocks
+# color yellow start="^```[^$]" end="^```$"
+# color yellow "^```$"
+
+## Trailing spaces
+# color ,green "[[:space:]]+$"
